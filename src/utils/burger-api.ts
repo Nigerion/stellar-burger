@@ -1,4 +1,4 @@
-import { setCookie, getCookie } from './cookie';
+import { setCookie, getCookie, deleteCookie } from './cookie';
 import { TIngredient, TOrder, TOrdersData, TUser } from './types';
 
 const URL = process.env.BURGER_API_URL;
@@ -35,8 +35,6 @@ export const refreshToken = (): Promise<TRefreshResponse> =>
       return refreshData;
     });
 
-/* Это предпочтительны способ обновления токена, но допустимы и другие, главное,
-что бы обновление токена работало корректно */
 export const fetchWithRefresh = async <T>(
   url: RequestInfo,
   options: RequestInit
@@ -74,6 +72,7 @@ type TOrdersResponse = TServerResponse<{
 }>;
 
 export const getIngredientsApi = () =>
+  //ingredientsSlice
   fetch(`${URL}/ingredients`)
     .then((res) => checkResponse<TIngredientsResponse>(res))
     .then((data) => {
@@ -82,6 +81,7 @@ export const getIngredientsApi = () =>
     });
 
 export const getFeedsApi = () =>
+  //feedSlice
   fetch(`${URL}/orders/all`)
     .then((res) => checkResponse<TFeedsResponse>(res))
     .then((data) => {
@@ -90,6 +90,7 @@ export const getFeedsApi = () =>
     });
 
 export const getOrdersApi = () =>
+  //feedSlice
   fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
     method: 'GET',
     headers: {
@@ -126,6 +127,7 @@ type TOrderResponse = TServerResponse<{
 }>;
 
 export const getOrderByNumberApi = (number: number) =>
+  //orderSlice
   fetch(`${URL}/orders/${number}`, {
     method: 'GET',
     headers: {
@@ -157,6 +159,11 @@ export const registerUserApi = (data: TRegisterData) =>
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
+    })
+    .then((data) => {
+      setCookie('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      return data;
     });
 
 export type TLoginData = {
@@ -176,6 +183,11 @@ export const loginUserApi = (data: TLoginData) =>
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
+    })
+    .then((data) => {
+      setCookie('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      return data;
     });
 
 export const forgotPasswordApi = (data: { email: string }) =>
@@ -234,4 +246,9 @@ export const logoutApi = () =>
     body: JSON.stringify({
       token: localStorage.getItem('refreshToken')
     })
-  }).then((res) => checkResponse<TServerResponse<{}>>(res));
+  })
+    .then((res) => checkResponse<TServerResponse<{}>>(res))
+    .then(() => {
+      deleteCookie('accessToken');
+      localStorage.removeItem('refreshToken');
+    });
