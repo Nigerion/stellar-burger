@@ -21,13 +21,13 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 const App = () => {
   const location = useLocation();
-  const backgroundLocation = location.state?.backgroundLocation;
+  const backgroundLocation = location.state?.background;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserThunk());
     dispatch(getIngredientsThunk());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className={styles.app}>
@@ -35,14 +35,7 @@ const App = () => {
       <Routes location={backgroundLocation || location}>
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
-        <Route
-          path='/login'
-          element={
-            // <ProtectedRoute>
-            <Login />
-            // </ProtectedRoute>
-          }
-        />
+        <Route path='/login' element={<Login />} />
         <Route
           path='/register'
           element={
@@ -126,16 +119,14 @@ const App = () => {
           <Route
             path='/profile/orders/:number'
             element={
-              <ProtectedRoute>
-                <Modal
-                  title=''
-                  onClose={() => {
-                    navigate(-1);
-                  }}
-                >
-                  <OrderInfo />
-                </Modal>
-              </ProtectedRoute>
+              <Modal
+                title=''
+                onClose={() => {
+                  navigate(-1);
+                }}
+              >
+                <OrderInfo />
+              </Modal>
             }
           />
         </Routes>
