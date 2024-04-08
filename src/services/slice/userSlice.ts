@@ -28,26 +28,16 @@ const initialState: UserState = {
 // вызов регистрации пользователя
 export const registerUserThunk = createAsyncThunk(
   'user/register',
-  async (data: TRegisterData) => registerUserApi(data)
+  registerUserApi
 );
 // Вызов входа пользователя
-export const loginUserThunk = createAsyncThunk(
-  'user/login',
-  async (data: TLoginData) => loginUserApi(data)
-);
+export const loginUserThunk = createAsyncThunk('user/login', loginUserApi);
 //  Вызов выхода пользователя
-export const logoutThunk = createAsyncThunk('user/logout', async () =>
-  logoutApi()
-);
+export const logoutThunk = createAsyncThunk('user/logout', logoutApi);
 // Вызов обновления пользователя
-export const updateUserThunk = createAsyncThunk(
-  'user/update',
-  async (user: Partial<TRegisterData>) => updateUserApi(user)
-);
+export const updateUserThunk = createAsyncThunk('user/update', updateUserApi);
 // Вызов получения пользователя
-export const getUserThunk = createAsyncThunk('user/get', async () =>
-  getUserApi()
-);
+export const getUserThunk = createAsyncThunk('user/get', getUserApi);
 //создание слоя
 export const userSlise = createSlice({
   name: 'user',

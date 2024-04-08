@@ -42,7 +42,7 @@ export const constructorSlice = createSlice({
     deleteIngredients: (state, action) => {
       state.constructorItems.ingredients =
         state.constructorItems.ingredients.filter(
-          (ingredient) => ingredient.id != action.payload
+          (ingredient) => ingredient.id !== action.payload.id
         );
     },
     clearBurger: (state) => {

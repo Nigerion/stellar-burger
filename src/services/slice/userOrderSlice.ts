@@ -18,7 +18,7 @@ export const orderBurgerThunk = createAsyncThunk(
   'postOrder/fetchOrderBurgerApi',
   async (data: string[]) => orderBurgerApi(data)
 );
-export const UserOrderSlice = createSlice({
+export const userOrderSlice = createSlice({
   name: 'userOrder',
   initialState,
   reducers: {
@@ -47,6 +47,6 @@ export const UserOrderSlice = createSlice({
   }
 });
 
-export const userOrderReducer = UserOrderSlice.reducer;
-export const { userOrderSelector } = UserOrderSlice.selectors;
-export const { clearOrder } = UserOrderSlice.actions;
+export const userOrderReducer = userOrderSlice.reducer;
+export const { userOrderSelector } = userOrderSlice.selectors;
+export const { clearOrder } = userOrderSlice.actions;

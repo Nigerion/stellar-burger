@@ -94,7 +94,7 @@ const App = () => {
             path='/feed/:number'
             element={
               <Modal
-                title=''
+                title='Информация о заказе'
                 onClose={() => {
                   navigate(-1);
                 }}
@@ -107,7 +107,7 @@ const App = () => {
             path='/ingredients/:id'
             element={
               <Modal
-                title=''
+                title='Детали ингредиента'
                 onClose={() => {
                   navigate(-1);
                 }}
@@ -120,7 +120,7 @@ const App = () => {
             path='/profile/orders/:number'
             element={
               <Modal
-                title=''
+                title='Информация о заказе'
                 onClose={() => {
                   navigate(-1);
                 }}
