@@ -26,7 +26,6 @@ export const BurgerConstructor: FC = () => {
   const nav = useNavigate();
   const isAuth = useSelector(selectorIsAuth);
   const onOrderClick = () => {
-    // if (!constructorItems.bun || orderRequest) return; selectorIsAuth
     if (!constructorItems.bun || !isAuth) {
       nav('/login');
     } else {

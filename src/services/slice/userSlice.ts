@@ -53,10 +53,12 @@ export const userSlise = createSlice({
     builder.addCase(registerUserThunk.pending, (state) => {
       state.isLoading = true; //говорит что идет загрузка
       state.error = null; // очищает ошибку
+      state.isAuth = false;
     }); //экшен будет отправлен, если асинхронная функция завершится с ошибкой. В этом случае в поле error будут содержаться данные об ошибке в формате:interface SerializedError { name?: string message?: string code?: strings tack?: string} (теория)
     builder.addCase(registerUserThunk.rejected, (state, action) => {
       state.isLoading = false; // получили ответ от сервера
       state.error = action.error.message as string; // записываем ошибку
+      state.isAuth = false;
     }); //экшен будет отправлен, если асинхронная функция из второго аргумента завершится без ошибок (в нашем случае если запрос завершится успешно). В этом случае в поле payload этого экшена будут лежать данные, которые вернула асинхронная функция (в нашем случае — массив книг Array<TBook>). (теория)
     builder.addCase(registerUserThunk.fulfilled, (state, action) => {
       state.isLoading = false; // получили ответ от сервера
@@ -68,10 +70,12 @@ export const userSlise = createSlice({
     builder.addCase(loginUserThunk.pending, (state) => {
       state.isLoading = true; //говорит что идет загрузка
       state.error = null; // очищает ошибку
+      state.isAuth = false;
     });
     builder.addCase(loginUserThunk.rejected, (state, action) => {
       state.isLoading = false; // получили ответ от сервера
       state.error = action.error.message as string; // записываем ошибку
+      state.isAuth = false;
     });
     builder.addCase(loginUserThunk.fulfilled, (state, action) => {
       state.isLoading = false; // получили ответ от сервера
@@ -82,10 +86,12 @@ export const userSlise = createSlice({
     builder.addCase(logoutThunk.pending, (state) => {
       state.isLoading = true; //говорит что идет загрузка
       state.error = null; // очищает ошибку
+      state.isAuth = true;
     });
     builder.addCase(logoutThunk.rejected, (state, action) => {
       state.isLoading = false; // получили ответ от сервера
       state.error = action.error.message as string; // записываем ошибку
+      state.isAuth = false;
     });
     builder.addCase(logoutThunk.fulfilled, (state, action) => {
       state.isLoading = false; // получили ответ от сервера

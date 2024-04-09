@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import App from './components/app/app';
 import { Provider } from 'react-redux';
@@ -11,7 +11,9 @@ const root = ReactDOMClient.createRoot(container!);
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <StrictMode>
+        <App />
+      </StrictMode>
     </BrowserRouter>
   </Provider>
 );
