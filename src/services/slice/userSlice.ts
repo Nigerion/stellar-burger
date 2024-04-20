@@ -8,7 +8,7 @@ import {
   forgotPasswordApi,
   resetPasswordApi,
   TLoginData
-} from '@api';
+} from '../../utils/burger-api';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { TUser } from '@utils-types'; // email: string; name: string;
 // типизация intitialState
