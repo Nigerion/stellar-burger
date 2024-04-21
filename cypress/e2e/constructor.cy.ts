@@ -5,21 +5,19 @@ describe('Проверяем добавление ингредиента в ко
     cy.visit('http://localhost:4000/');
   });
   it('Проверяем добавление ингредиента в конструктор', () => {
-    cy.get(':nth-child(2) > :nth-child(1) > .common_button')
+    cy.get('[data-testid="643d69a5c3f7b9001cfa093c"] > .common_button')
       .contains('Добавить')
       .click();
-    cy.get(':nth-child(4) > :nth-child(1) > .common_button')
+    cy.get('[data-testid="643d69a5c3f7b9001cfa0941"] > .common_button')
       .contains('Добавить')
       .click();
+    cy.get('[data-testid="bunTop"]').contains('Краторная булка N-200i (верх)');
     cy.get(
-      '.mJns_Jb07jLke7LQ6UAF.mb-4 > .constructor-element > .constructor-element__row > .constructor-element__text'
-    ).contains('Краторная булка N-200i (верх)');
-    cy.get(
-      '.Hf3gHktDVu9C__6KCbWX > .constructor-element > .constructor-element__row > .constructor-element__text'
+      '[data-testid="ingredient 643d69a5c3f7b9001cfa0941"] > .constructor-element > .constructor-element__row > .constructor-element__text'
     ).contains('Биокотлета из марсианской Магнолии');
-    cy.get(
-      '.mt-4 > .constructor-element > .constructor-element__row > .constructor-element__text'
-    ).contains('Краторная булка N-200i (низ)');
+    cy.get('[data-testid="bunBottom"]').contains(
+      'Краторная булка N-200i (низ)'
+    );
   });
 });
 describe('Проверяем открытие модальных окон(ингредиентов)', () => {
@@ -28,18 +26,18 @@ describe('Проверяем открытие модальных окон(инг
     cy.visit('http://localhost:4000/');
   });
   it('Проверяем открытие модального окна', () => {
-    cy.get('.nwANerpzIt6nknkv21Qj > :nth-child(2) > :nth-child(1)').click();
-    cy.get('.G7XCxXE59ujtXU1FO7W1 > .text_type_main-medium').contains(
-      'Краторная булка N-200i'
-    );
+    cy.get(
+      '[data-testid="643d69a5c3f7b9001cfa093c"] > .J2V21wcp5ddf6wQCcqXv'
+    ).click();
+    cy.get('[data-testid="modal"]').contains('Краторная булка N-200i');
   });
   it('Проверяем закрытие модального окна', () => {
-    cy.get('.nwANerpzIt6nknkv21Qj > :nth-child(2) > :nth-child(1)').click();
-    cy.get('.G7XCxXE59ujtXU1FO7W1 > .text_type_main-medium').contains(
-      'Краторная булка N-200i'
-    );
-    cy.get('.Z7mUFPBZScxutAKTLKHN').click();
-    cy.get('.xqsNTMuGR8DdWtMkOGiM').should('not.exist');
+    cy.get(
+      '[data-testid="643d69a5c3f7b9001cfa093c"] > .J2V21wcp5ddf6wQCcqXv'
+    ).click();
+    cy.get('[data-testid="modal"]').contains('Краторная булка N-200i');
+    cy.get('[data-testid="modalClose"]').click();
+    cy.get('[data-testid="modal"]').should('not.exist');
   });
 });
 describe('Проверяем создание заказа', () => {
@@ -58,26 +56,26 @@ describe('Проверяем создание заказа', () => {
     cy.visit('http://localhost:4000/');
   });
   it('Проверяем создание заказа', () => {
-    cy.get(':nth-child(2) > :nth-child(2) > .common_button')
+    cy.get('[data-testid="643d69a5c3f7b9001cfa093d"] > .common_button')
       .contains('Добавить')
       .click();
-    cy.get(':nth-child(4) > :nth-child(2) > .common_button')
+    cy.get('[data-testid="643d69a5c3f7b9001cfa093e"] > .common_button')
       .contains('Добавить')
       .click();
-    cy.get(':nth-child(4) > :nth-child(1) > .common_button')
+    cy.get('[data-testid="643d69a5c3f7b9001cfa0941"] > .common_button')
       .contains('Добавить')
       .click();
     cy.get('.button').contains('Оформить заказ').click();
-    cy.get('.U070UGjz0x5J0l3NxX3I').should('have.text', '38427');
-    cy.get('.Z7mUFPBZScxutAKTLKHN').click();
-    cy.get('.xqsNTMuGR8DdWtMkOGiM').should('not.exist');
-    cy.get('.OF4tMG36q2aG7QGwf6XA').contains('Выберите булки');
-    cy.get('.HEJ0tV35JHL7iuHL89vk > ._W_JfNJJl5H5e8eqr8Ya').contains(
-      'Выберите начинку'
-    );
-    cy.get('.utZ2B1QgZOCmNRbEQvPA').contains('Выберите булки');
-    localStorage.clear();
-    deleteCookie('accessToken');
+    cy.get('[data-testid="orderNumber"]').should('have.text', '38427');
+    cy.get('[data-testid="modalClose"]').click();
+    cy.get('[data-testid="modal"]').should('not.exist');
+    cy.get('[data-testid="bunTop"]').contains('Выберите булки');
+    cy.get('[data-testid="ingredient"]').contains('Выберите начинку');
+    cy.get('[data-testid="bunBottom"]').contains('Выберите булки');
+  });
+  afterEach(function () {
+    cy.clearLocalStorage();
+    cy.clearCookies();
   });
 });
 // 38427
