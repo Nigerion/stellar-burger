@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1713536993249" clover="3.2.0">
-  <project timestamp="1713536993249" name="All files">
+<coverage generated="1713693009426" clover="3.2.0">
+  <project timestamp="1713693009426" name="All files">
     <metrics statements="768" coveredstatements="556" conditionals="45" coveredconditionals="43" methods="42" coveredmethods="12" elements="855" coveredelements="611" complexity="0" loc="768" ncloc="768" packages="3" files="9" classes="9"/>
     <package name="services">
       <metrics statements="36" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="store.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\store.ts">
+      <file name="store.ts" path="C:\Users\Антон\Desktop\stellar\src\services\store.ts">
         <metrics statements="36" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -46,7 +46,7 @@
     </package>
     <package name="services.slice">
       <metrics statements="432" coveredstatements="428" conditionals="44" coveredconditionals="42" methods="23" coveredmethods="11"/>
-      <file name="constructorSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\constructorSlice.ts">
+      <file name="constructorSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\constructorSlice.ts">
         <metrics statements="81" coveredstatements="79" conditionals="8" coveredconditionals="6" methods="6" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -130,7 +130,7 @@
         <line num="80" count="1" type="stmt"/>
         <line num="81" count="1" type="stmt"/>
       </file>
-      <file name="feedSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\feedSlice.ts">
+      <file name="feedSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\feedSlice.ts">
         <metrics statements="63" coveredstatements="63" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -196,7 +196,7 @@
         <line num="62" count="1" type="stmt"/>
         <line num="63" count="1" type="stmt"/>
       </file>
-      <file name="ingredietsSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\ingredietsSlice.ts">
+      <file name="ingredietsSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\ingredietsSlice.ts">
         <metrics statements="47" coveredstatements="47" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -246,7 +246,7 @@
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
       </file>
-      <file name="orderSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\orderSlice.ts">
+      <file name="orderSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\orderSlice.ts">
         <metrics statements="46" coveredstatements="46" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -295,7 +295,7 @@
         <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
       </file>
-      <file name="userOrderSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\userOrderSlice.ts">
+      <file name="userOrderSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\userOrderSlice.ts">
         <metrics statements="52" coveredstatements="50" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -350,7 +350,7 @@
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
       </file>
-      <file name="userSlice.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\services\slice\userSlice.ts">
+      <file name="userSlice.ts" path="C:\Users\Антон\Desktop\stellar\src\services\slice\userSlice.ts">
         <metrics statements="143" coveredstatements="143" conditionals="17" coveredconditionals="17" methods="6" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -499,7 +499,7 @@
     </package>
     <package name="utils">
       <metrics statements="300" coveredstatements="92" conditionals="1" coveredconditionals="1" methods="18" coveredmethods="1"/>
-      <file name="burger-api.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\utils\burger-api.ts">
+      <file name="burger-api.ts" path="C:\Users\Антон\Desktop\stellar\src\utils\burger-api.ts">
         <metrics statements="253" coveredstatements="90" conditionals="1" coveredconditionals="1" methods="15" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -755,7 +755,7 @@
         <line num="252" count="0" type="stmt"/>
         <line num="253" count="0" type="stmt"/>
       </file>
-      <file name="cookie.ts" path="C:\Users\Антон\Desktop\Dev\stellar-burger\src\utils\cookie.ts">
+      <file name="cookie.ts" path="C:\Users\Антон\Desktop\stellar\src\utils\cookie.ts">
         <metrics statements="47" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
