@@ -76,6 +76,8 @@ describe('Проверяем создание заказа', () => {
       'Выберите начинку'
     );
     cy.get('.utZ2B1QgZOCmNRbEQvPA').contains('Выберите булки');
+    localStorage.clear();
+    deleteCookie('accessToken');
   });
 });
 // 38427
