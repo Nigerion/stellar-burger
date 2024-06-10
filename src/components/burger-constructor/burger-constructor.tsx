@@ -16,23 +16,6 @@ import { selectorIsAuth } from '../../services/slice/userSlice';
 
 export const BurgerConstructor: FC = () => {
   /** TODO: взять переменные constructorItems, orderRequest и orderModalData из стора */
-<<<<<<< HEAD
-  const constructorItems = {
-    bun: {
-      price: 0
-    },
-    ingredients: []
-  };
-
-  const orderRequest = false;
-
-  const orderModalData = null;
-
-  const onOrderClick = () => {
-    if (!constructorItems.bun || orderRequest) return;
-  };
-  const closeOrderModal = () => {};
-=======
   const constructorItems = useSelector(constructorState).constructorItems;
 
   const orderRequest = useSelector(userOrderSelector).isLoading;
@@ -59,7 +42,6 @@ export const BurgerConstructor: FC = () => {
     dispatch(clearBurger());
     nav('/');
   };
->>>>>>> review
 
   const price = useMemo(
     () =>
@@ -71,11 +53,7 @@ export const BurgerConstructor: FC = () => {
     [constructorItems]
   );
 
-<<<<<<< HEAD
-  return null;
-=======
   // return null;
->>>>>>> review
 
   return (
     <BurgerConstructorUI

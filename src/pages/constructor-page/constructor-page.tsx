@@ -13,11 +13,7 @@ import {
 
 export const ConstructorPage: FC = () => {
   /** TODO: взять переменную из стора */
-<<<<<<< HEAD
-  const isIngredientsLoading = false;
-=======
   const isIngredientsLoading = useSelector(ingredientsState).isLoading;
->>>>>>> review
 
   return (
     <>

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { ConstructorPage } from '@pages';
-=======
 import {
   ConstructorPage,
   Login,
@@ -11,7 +8,6 @@ import {
   ProfileOrders,
   NotFound404
 } from '@pages';
->>>>>>> review
 import '../../index.css';
 import styles from './app.module.css';
 import { Feed } from '../../pages/feed';
@@ -33,14 +29,6 @@ const App = () => {
     dispatch(getIngredientsThunk());
   }, []);
 
-<<<<<<< HEAD
-const App = () => (
-  <div className={styles.app}>
-    <AppHeader />
-    <ConstructorPage />
-  </div>
-);
-=======
   return (
     <div className={styles.app}>
       <AppHeader />
@@ -153,6 +141,5 @@ const App = () => (
     </div>
   );
 };
->>>>>>> review
 
 export default App;
