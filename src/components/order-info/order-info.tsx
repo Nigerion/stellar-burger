@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { FC, useMemo } from 'react';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
@@ -17,6 +18,30 @@ export const OrderInfo: FC = () => {
 
   const ingredients: TIngredient[] = [];
 
+=======
+import { FC, useEffect, useMemo } from 'react';
+import { Preloader } from '../ui/preloader';
+import { OrderInfoUI } from '../ui/order-info';
+import { TIngredient } from '@utils-types';
+import { useDispatch, useSelector } from '../../services/store';
+import { ingredientsSelector } from '../../services/slice/ingredietsSlice';
+import {
+  getOrderByNumberThunk,
+  orderSelector
+} from '../../services/slice/orderSlice';
+import { useParams } from 'react-router';
+
+export const OrderInfo: FC = () => {
+  /** TODO: взять переменные orderData и ingredients из стора */
+  const orders = useSelector(orderSelector).order;
+  const orderData = orders.find((order) => order);
+  const { number } = useParams();
+  const ingredients: TIngredient[] = useSelector(ingredientsSelector);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getOrderByNumberThunk(Number(number)));
+  }, []);
+>>>>>>> review
   /* Готовим данные для отображения */
   const orderInfo = useMemo(() => {
     if (!orderData || !ingredients.length) return null;

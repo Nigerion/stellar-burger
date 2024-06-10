@@ -1,4 +1,4 @@
-import { setCookie, getCookie } from './cookie';
+import { setCookie, getCookie, deleteCookie } from './cookie';
 import { TIngredient, TOrder, TOrdersData, TUser } from './types';
 
 const URL = process.env.BURGER_API_URL;
@@ -72,6 +72,7 @@ type TOrdersResponse = TServerResponse<{
 }>;
 
 export const getIngredientsApi = () =>
+  //ingredientsSlice
   fetch(`${URL}/ingredients`)
     .then((res) => checkResponse<TIngredientsResponse>(res))
     .then((data) => {
@@ -80,6 +81,7 @@ export const getIngredientsApi = () =>
     });
 
 export const getFeedsApi = () =>
+  //feedSlice
   fetch(`${URL}/orders/all`)
     .then((res) => checkResponse<TFeedsResponse>(res))
     .then((data) => {
@@ -88,6 +90,7 @@ export const getFeedsApi = () =>
     });
 
 export const getOrdersApi = () =>
+  //feedSlice
   fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
     method: 'GET',
     headers: {
@@ -124,6 +127,7 @@ type TOrderResponse = TServerResponse<{
 }>;
 
 export const getOrderByNumberApi = (number: number) =>
+  //orderSlice
   fetch(`${URL}/orders/${number}`, {
     method: 'GET',
     headers: {
@@ -155,6 +159,13 @@ export const registerUserApi = (data: TRegisterData) =>
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
+    })
+    .then((data) => {
+      setCookie('accessToken', data.accessToken);
+      setCookie('refreshToken', data.refreshToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('accessToken', data.accessToken);
+      return data;
     });
 
 export type TLoginData = {
@@ -174,6 +185,13 @@ export const loginUserApi = (data: TLoginData) =>
     .then((data) => {
       if (data?.success) return data;
       return Promise.reject(data);
+    })
+    .then((data) => {
+      setCookie('accessToken', data.accessToken);
+      setCookie('refreshToken', data.refreshToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('accessToken', data.accessToken);
+      return data;
     });
 
 export const forgotPasswordApi = (data: { email: string }) =>
