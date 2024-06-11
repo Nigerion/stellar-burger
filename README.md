@@ -78,16 +78,21 @@ HTML,CSS,SASS, TypeScript , Redux, React, React Router
 Запускаем тестирование(Cypress)<br>
 `npm run cypress:open` //для тестирования<br>
 # Доступные скрипты
-`npm start`<br>
-`npm storybook`<br>
-`npm build-storybook`<br>
-`npm lint`<br>
-`npm lint:fix`<br>
-`npm format`<br>
-`npm test`<br>
-`npm run cypress:open`<br>
+1.`npm start`<br>
+2.`npm storybook`<br>
+3.`npm build-storybook`<br>
+4.`npm lint`<br>
+5.`npm lint:fix`<br>
+6.`npm format`<br>
+7.`npm test`<br>
+8.`npm run cypress:open`<br>
 # Ссылка на макет и чеклист
-[Макет](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>)
-
+Макет:<br>
+[![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>) <br>
+Чеклист:<br>
+[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4) <br>
+<!-- [Макет](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>) 
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 [Чеклист](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4)
-
+![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
+-->
