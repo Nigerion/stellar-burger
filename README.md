@@ -87,7 +87,7 @@ HTML,CSS,SASS, TypeScript , Redux, React, React Router
 6.`npm format`<br>
 7.`npm test`<br>
 8.`npm run cypress:open`<br>
-# Ссылка на макет и чеклист
+# Ссылка на макет, чеклист и GitHub
 Макет:<br>
 [![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>) <br>
 Чеклист:<br>
