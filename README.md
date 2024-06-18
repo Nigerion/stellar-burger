@@ -21,23 +21,22 @@
 
 # Web-приложение выполнено в космической тематике.
 
-# О проекте
-Проект состоит из страницы оформления заказа в ресторане Stellar Burgers, которая представлена в форме интерактивного приложения, позволяющего клиентам самостоятельно составить свой бургер. На верхней части страницы расположена панель навигации с ссылками для перехода в другие разделы сайта. Основная часть страницы разделена на две секции: список доступных ингредиентов и составленный заказ.
+## О проекте
 ![image](https://github.com/Nigerion/stellar-burger/assets/115921794/bade1a36-6e18-4f24-8be3-c438ce3ae2aa)
+Проект состоит из страницы оформления заказа в ресторане Stellar Burgers, которая представлена в форме интерактивного приложения, позволяющего клиентам самостоятельно составить свой бургер. На верхней части страницы расположена панель навигации с ссылками для перехода в другие разделы сайта. Основная часть страницы разделена на две секции: список доступных ингредиентов и составленный заказ.
 
-# Что было сделано
+## Что было сделано
 1. Написал и подключил store<br>
 2. Сделал роутинг и авторизацию<br>
 3. Написал следующие слои :<br>
 - constructorSlice<br>
--  feedSlice<br>
+- feedSlice<br>
 - ingredietsSlice<br>
 - orderSlice<br>
 - userOrderSlice<br>
 - userSlice<br>
 
-
-# Какие тесты написанны
+## Какие тесты написанны
 Тесты на Cypress<br>
 
 Протестированы следующие функции:<br>
@@ -57,10 +56,84 @@
 - Написаны тесты, проверяющие функционирование редьюсера конструктора бургера при добавлении и удалении ингредиента.
 - Написаны тесты, проверяющие обработку редьюсером экшенов, генерируемых при выполнении асинхронного запроса: экшены начала запроса, успешного выполнения запроса и ошибки запроса.
 
+## Технологии
+HTML,CSS,SASS, TypeScript , Redux, React, React Router
 
-# Какие планы по доработке проекта
-* Написать регулярку для инпутов
-*
+## Установка и запуск
+Проект запускается локально по адресу http://localhost:4000/ путем клонирования данного репозитория и последовательного запуска команд в терминале (должны быть установлены программы Git, NodeJS и менеджер пакетов npm).<br>
+Для установки и запуска проекта необходимо выполнить команды
+
+```
+npm install
+npm run start
+```
+
+или
+
+```
+yarn
+yarn start
+```
+## Сборка
+
+```
+npm run build
+```
+
+или
+
+```
+yarn build
+```
+## Тестирование(Jest)
+```
+npm test
+```
+
+или
+
+```
+yarn test
+```
+## Тестирование(Cypress)
+```
+npm run cypress:open
+```
+
+или
+
+```
+yarn cypress:open
+```
+## Статус проекта
+На данный момент планируется следующее:
+- Написать регулярку для инпутов
+
+## Доступные скрипты
+```
+npm start
+npm storybook
+npm build-storybook
+npm lint
+npm lint:fix
+npm format
+npm test
+npm run cypress:open
+```
+## Ссылка на макет, чеклист и GitHub
+Макет:<br>
+[![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>) <br>
+Чеклист:<br>
+[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4) <br>
+GitHub<br>
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Nigerion/mesto-project-ff)<br>
+
+
+
+
+
+
+<!--
 # Технологии
 HTML,CSS,SASS, TypeScript , Redux, React, React Router
 # Установка и запуск
